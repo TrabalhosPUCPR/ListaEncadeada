@@ -1,6 +1,6 @@
 # ListaEncadeada
 
-### Um sistema de lista encadeade que insere dados de forma ordenada no Java
+### Um sistema de lista encadeada que insere dados de forma ordenada no Java
 
 <br>
 Pesquise e responda os itens a seguir sobre Listas Encadeadas
