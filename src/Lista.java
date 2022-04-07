@@ -9,7 +9,7 @@ public class Lista {
         this.tamanho = 0;
     }
 
-    public Integer getUltimo(){
+    public Integer getUltimoElemento(){
         return this.ultimo.dado;
     }
     public No get(int i){
