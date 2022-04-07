@@ -31,7 +31,7 @@ public class App {
         lista_ordenada.remove_ultimo();
         lista_ordenada.print();
         System.out.print("LISTA ORDENADA 1 (elemento depois do index x removido): ");
-        lista_ordenada.remove_depois(4); // pode colocar index ou o No como argumento, ele faz o get automatico
+        lista_ordenada.remove_depois(3); // pode colocar index ou o No como argumento, ele faz o get automatico
         lista_ordenada.print();
     }
 }
