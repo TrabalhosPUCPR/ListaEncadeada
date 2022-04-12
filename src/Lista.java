@@ -1,12 +1,10 @@
 public class Lista {
     private No primeiro;
     private No ultimo;
-    private int tamanho;
 
     public Lista(){
         this.primeiro = null;
         this.ultimo = null;
-        this.tamanho = 0;
     }
 
     public Integer getUltimoElemento(){
@@ -14,10 +12,12 @@ public class Lista {
     }
     public No get(int i){
         No p = this.primeiro;
-        for(int y = 0; i >= y && i < this.tamanho; y++){
-            if(y == i){
+        int cont = 0;
+        while(p != null){
+            if(cont == i){
                 return p;
             }
+            cont++;
             p = p.proximo;
         }
         System.out.println("Index invalido");
@@ -37,6 +37,29 @@ public class Lista {
 
     public boolean vazio(){
         return this.primeiro == null;
+    }
+
+    public Lista intersecao(Lista lista){
+        No p = this.primeiro;
+        Lista elementos = new Lista();
+        while(p != null){
+            if(lista.contains(p.dado) && !elementos.contains(p.dado)){
+                elementos.add_ordenado(p.dado);
+            }
+            p = p.proximo;
+        }
+        return elementos;
+    }
+
+    private boolean contains(int n){
+        No p = this.primeiro;
+        while(p != null){
+            if(p.dado == n){
+                return true;
+            }
+            p = p.proximo;
+        }
+        return false;
     }
 
     public double similaridade(Lista lista){
@@ -105,13 +128,11 @@ public class Lista {
         No p = new No(dado);
         p.proximo = this.primeiro;
         this.primeiro = p;
-        this.tamanho++;
     }
     public void add_ultimo(int dado){
         No p = new No(dado);
         this.ultimo.proximo = p;
         this.ultimo = this.ultimo.proximo;
-        this.tamanho++;
     }
     public void add_depois(No no, int dado){
         No p = this.primeiro;
@@ -121,7 +142,6 @@ public class Lista {
                 No no2 = new No(dado);
                 no2.proximo = p.proximo;
                 p.proximo = no2;
-                this.tamanho++;
                 return;
             }
         }
@@ -140,7 +160,6 @@ public class Lista {
                         No a = new No(dado);
                         a.proximo = p.proximo;
                         p.proximo = a;
-                        this.tamanho++;
                     }else{
                         p = p.proximo;
                     }
@@ -149,7 +168,6 @@ public class Lista {
         }else{
             this.primeiro = new No(dado);
             this.ultimo = primeiro;
-            this.tamanho++;
         }
     }
 }
