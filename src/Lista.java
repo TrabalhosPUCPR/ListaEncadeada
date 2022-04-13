@@ -136,14 +136,14 @@ public class Lista {
     }
     public void add_depois(No no, int dado){
         No p = this.primeiro;
-
-        while(p != no){
+        while(p != null){
             if(p == no){
                 No no2 = new No(dado);
                 no2.proximo = p.proximo;
                 p.proximo = no2;
                 return;
             }
+            p = p.proximo;
         }
         System.out.println("No nao encontrado na lista");
     }
